@@ -1,1 +1,3 @@
 Add list of hosts here
+
+Put hosts.list file in Satellite server and mention the path in the shell script
