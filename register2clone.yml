@@ -1,0 +1,5 @@
+---
+- hosts: ua0lrhsat100.ace.aaaclubnet.com
+  tasks:
+   - name: Run the script
+     script: /etc/ansible/patching/RFC/RFC-done/RFC87419-Prod_AEM_CQ_Site_A/registerservers.sh
