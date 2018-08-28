@@ -1,0 +1,15 @@
+---
+- hosts: ua4linux601.ace.aaaclubnet.com
+  become: yes
+  tasks:
+   - name: register vm
+     rhn_register:
+       state: present
+       activationkey: "1-79bbc20b732c6068a6506943d181ffa1"
+       server_url: "https://ua0lrhsat100.ace.aaaclubnet.com"
+       channels: "aug-clone-rhel-x86_64-server-7"
+     register: rhn_result
+     failed_when:
+       - "rhn_result is success"
+       - "'cannot marshal None unless allow_none is enabled' not in rhn_result.msg"
+       - "'System already registered' not in rhn_result.msg"
